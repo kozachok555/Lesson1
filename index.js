@@ -101,10 +101,55 @@ const hw4 = () =>{
         alert(changed.length)
     }
     const task3 = () =>{
-        
-
-        
+        const ourYear = new Date().getFullYear()
+        const birthData = prompt("What it your birthday data(year)?")
+        const city = prompt("What is your city?")
+        const sport = prompt("Your lovely sport")
+        let birthInfo = ourYear - birthData;
+        let cityInfo;
+        let sportInfo;
+        switch(city){
+            case "Київ":
+                cityInfo = "Ти живеш у столиці України"
+                break;
+            case "Вашингтон":
+                cityInfo = "Ти живеш у столиці США"
+                break;
+            case "Лондон":
+                cityInfo = "Ти живеш у столиці Англії"
+                break;
+            default:
+                cityInfo = `ти живеш у місті ${city}`
+        }
+        switch(sport){
+            case "Футбол":
+                sportInfo = "Круто! Хочеш стати Лионель Месси?"
+                break;
+            case "Баскетбол":
+                sportInfo = "Круто! Хочеш стати Стефен Карри?"
+                break;
+            case "Шахмати":
+                sportInfo = "Круто! Хочеш стати Магнус Карлсен?"
+                break;
+            default:
+                sportInfo = `${sport} Класний вид спорту`
+        }
+        switch(true){
+            case birthData === null:
+                birthInfo = "Шкода, що Ви не захотіли ввести свій рік народження";
+            case city === null:
+                cityInfo = "Шкода, що Ви не захотіли ввести своє місто";
+            case sport === null:
+                sportInfo = "Шкода, що Ви не захотіли ввести свій спорт"
+            default:
+                console.log("Not all info")
+        }
+        alert(`You are: ${birthInfo}
+            ${cityInfo}
+            ${sportInfo}
+            `)
     }
+    task3()
     const task4 = () =>{
         let numOrStr = prompt('input number or string');
         console.log(numOrStr)
@@ -124,6 +169,5 @@ const hw4 = () =>{
 
         }
     }
-    task4()
  }
  hw4()
