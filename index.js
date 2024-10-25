@@ -149,7 +149,6 @@ const hw4 = () =>{
             ${sportInfo}
             `)
     }
-    task3()
     const task4 = () =>{
         let numOrStr = prompt('input number or string');
         console.log(numOrStr)
@@ -169,5 +168,69 @@ const hw4 = () =>{
 
         }
     }
- }
- hw4()
+}
+const hw5 = () =>{  
+    const task1 = () =>{
+        let result = '';
+        for(let i = 20;i <=30;i = i + 0.5){
+            if(i === 30){
+                result +=`${i}`
+            }else{
+                result += `${i}, `
+            }
+        }
+        console.log(result);
+    }
+    const task2 = () =>{
+        let result = '';
+        const convertUSDtoUAH = async () => {
+            const response = await fetch('https://v6.exchangerate-api.com/v6/43c820cb13184bdaa89c836a/latest/USD')
+            const data = await response.json()
+            const exchangeToUAH = data.conversion_rates.UAH;
+
+
+            for(let i = 10;i<= 100;i = i + 10){
+
+                let UAH = exchangeToUAH * i;
+                result += `${i}USD = ${UAH.toFixed(2)}UAH \n`;
+            }
+
+            console.log(result)
+        }
+        convertUSDtoUAH()
+    }
+    const task3 = () =>{
+        const anyNumber = +prompt("Enter the number")
+        let result = '';
+        for(let i = 1;i <=100;i++){
+            if(i*i > anyNumber) continue;
+            result += `${i} in square = ${i*i} \n`
+        }
+        console.log(result)
+    }
+    const task4 = () =>{
+        const anyNumber = +prompt("ENTER ANY NUMBER")
+        if(anyNumber === 1 || anyNumber === 2){
+            console.log("Простое")
+        }else if(anyNumber < 1){
+            console.log("Напиши только положительное число и нельзя вписывать 0")
+        }else{
+            let result = "Простое";
+            for(let i = 2;i<anyNumber ; i++){
+                if(anyNumber % i === 0){
+                    result = "Не простое";
+                    break;
+                }else{
+                    continue;
+                }
+            }
+            if(result === 'Простое'){
+                console.log(result)
+            }else{
+                console.log(result)
+            }
+        }
+    }
+    task4()
+}
+hw5()
