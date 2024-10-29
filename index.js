@@ -231,6 +231,33 @@ const hw5 = () =>{
             }
         }
     }
-    task4()
 }
-hw5()
+const cw6 = () => {
+    const task1 = (num1, num2) => {
+        return num1 > num2 ? num1 : num2;
+    }
+    const task2 = (num1, n) => {
+        let result = num1;
+        for(let i = 1; i< n;i++){
+            result *= n;
+        }
+        return result;
+    }
+}
+const hw6 = () => {
+    const task1 = (yourString, deleteLetters) =>{
+        let changed = yourString.split('')
+        console.log(changed)
+        console.log(deleteLetters)
+        for(let i = 0;i<=changed.length;i++){
+            for(let j= 0;j<=deleteLetters.length;j++){
+                if(changed[i]===deleteLetters[j]){
+                    changed.splice(i,1);
+                }
+            }
+        }
+        console.log(changed)
+    }
+    task1("Hello world", ["l","d"])
+}
+hw6()
