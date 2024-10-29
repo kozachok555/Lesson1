@@ -246,18 +246,46 @@ const cw6 = () => {
 }
 const hw6 = () => {
     const task1 = (yourString, deleteLetters) =>{
-        let changed = yourString.split('')
-        console.log(changed)
-        console.log(deleteLetters)
-        for(let i = 0;i<=changed.length;i++){
-            for(let j= 0;j<=deleteLetters.length;j++){
-                if(changed[i]===deleteLetters[j]){
-                    changed.splice(i,1);
+        let changedString = yourString.split('')
+        for(let i = 0;i<changedString.length;i++){
+            for(let j= 0;j<deleteLetters.length;j++){
+                if(changedString[i]===deleteLetters[j]){
+                    changedString.splice(i,1);
+                    i--;
                 }
             }
         }
-        console.log(changed)
+        let result = changedString.join('');
+        return result;
     }
-    task1("Hello world", ["l","d"])
+    //console.log(task1("Hello world", ["l","d"]))
+    const task2 = (givenArray) =>{
+        let counterNumber = 0;
+        const filteredArray = [];
+        for(let i = 0;i<givenArray.length;i++){
+            if(typeof givenArray[i] === 'number'){
+                filteredArray.push(givenArray[i])
+            }
+        }
+        for(let i = 0;i<filteredArray.length;i++){
+            counterNumber += filteredArray[i];
+        }
+        let result = counterNumber/filteredArray.length;
+        return result;
+    }
+    //console.log(task2([1,true,"Hello",3,5,1,{name:"Vova"},12,"3",8]))
+    const task3 = (yourArray, deleteElement) =>{
+        let changedArrray = [];
+        for(let i = 0;i<yourArray.length;i++){
+            if(yourArray[i] === deleteElement){
+                console.log("deleted element: " + deleteElement)
+            }else{
+                changedArrray.push(yourArray[i])
+            }
+        }
+        let result = changedArrray;
+        return result;
+    }
+    //console.log(task3([1,true,"Hello",3,5,1,{name:"Vova"},12,"3",8], true))
 }
 hw6()
