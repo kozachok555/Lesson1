@@ -288,4 +288,44 @@ const hw6 = () => {
     }
     //console.log(task3([1,true,"Hello",3,5,1,{name:"Vova"},12,"3",8], true))
 }
-hw6()
+const cw7 = () => {
+    const task1 = (array,number) => {
+        for(let i = 0;i < array.length;i++){
+            if(array[i]===number){
+                return array;
+            }
+        }
+        let resultArr = [];
+        for(let i = 0;i < array.length; i++){
+            resultArr.push(array[i])
+        }
+        resultArr.push(number)
+        return resultArr
+    }
+    const task2 = (n) => {
+        const randomNumber = (min, max) =>{
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let result = '';
+        for(let i = 0;i < n;i++){
+            result += characters[randomNumber(0, characters.length)]
+        }
+        return result;
+    }
+    const task3 = (array) => {
+        let sum = 0;
+        for(let i = 0;i < array.length;i++){
+            sum += array[i];
+        }
+        return sum;
+    }
+    const task4 = (counter) => {
+        return () =>{
+            counter++;
+            return counter;
+        }
+    }
+    let counter = task4(4)
+}
+cw7()
