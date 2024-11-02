@@ -328,4 +328,37 @@ const cw7 = () => {
     }
     let counter = task4(4)
 }
-cw7()
+const hw7 = () => {
+    const task1 = () =>{
+        let counter = 0;
+        return function(num){
+            counter += num;
+            return counter;
+        }
+    }
+    // let count = task1()
+    // console.log(count(1))
+    // console.log(count(2))
+    // console.log(count(5))
+    const task2 = (a) =>{
+        return function(b){
+            return a*b;
+        }
+    }
+    // console.log(task2(3)(7))
+    const task3 = ()=>{
+        const myFunc = () =>{
+            let result = null;
+            for(let i = 0;i<10;i++){
+                let userInput = prompt("write number bigger than 100 or any text");
+                if(parseInt(userInput) > 100 || isNaN(userInput)){
+                    return userInput
+                }else if(parseInt(userInput) <= 100){
+                    result = userInput
+                }
+            }
+            return result;
+        }
+        console.log(myFunc());
+    }
+}
