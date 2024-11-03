@@ -351,7 +351,7 @@ const hw7 = () => {
             let result = null;
             for(let i = 0;i<10;i++){
                 let userInput = prompt("write number bigger than 100 or any text");
-                if(parseInt(userInput) > 100 || isNaN(userInput)){
+                if(parseInt(userInput) > 100 || isNaN(Number(userInput))){
                     return userInput
                 }else if(parseInt(userInput) <= 100){
                     result = userInput
@@ -361,4 +361,6 @@ const hw7 = () => {
         }
         console.log(myFunc());
     }
+    task3()
 }
+hw7()
