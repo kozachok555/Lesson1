@@ -361,6 +361,46 @@ const hw7 = () => {
         }
         console.log(myFunc());
     }
-    task3()
 }
-hw7()
+const cw8 = () =>{
+    const task1 = () =>{
+        let skill = {
+            name: 'Dog',
+            level: 8,
+            showInfo: function(){
+                return `${this.name} - ${this.level}`
+            }
+        }
+        console.log(skill.showInfo())
+    }
+    const task2 = () =>{
+        function Calc(number1,number2){
+            this.number1 = number1;
+            this.number2 = number2;
+            this.getPlus = function(){
+                return this.number1 + this.number2;
+            }
+            this.getMinus = function(){
+                return this.number1 - this.number2;
+            }
+        }
+    }
+}
+const hw8 = () =>{
+    let ladder = {
+        counter: 0,
+        up: function(){
+            this.counter += 1;
+            return ladder
+        },
+        down: function(){
+            this.counter += -1;
+            return ladder
+        },
+        showStep: function(){
+            console.log(this.counter)
+        }
+    }
+    ladder.up().up().showStep()
+}
+hw8()
