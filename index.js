@@ -391,11 +391,11 @@ const hw8 = () =>{
         counter: 0,
         up: function(){
             this.counter += 1;
-            return ladder
+            return ladder //проверив это в инете ,написали ,что можно еще писать - return this
         },
         down: function(){
             this.counter += -1;
-            return ladder
+            return ladder //проверив это в инете ,написали, что можно еще писать - return this
         },
         showStep: function(){
             console.log(this.counter)
