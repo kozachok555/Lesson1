@@ -391,16 +391,16 @@ const hw8 = () =>{
         counter: 0,
         up: function(){
             this.counter += 1;
-            return this.ladder
+            return ladder
         },
         down: function(){
             this.counter += -1;
-            return this.ladder
+            return ladder
         },
         showStep: function(){
             console.log(this.counter)
         }
     }
-    ladder.up().up().showStep()
+    ladder.up().up().down().showStep()
 }
 hw8()
