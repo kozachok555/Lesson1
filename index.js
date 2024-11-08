@@ -361,6 +361,96 @@ const hw7 = () => {
         }
         console.log(myFunc());
     }
-    task3()
 }
-hw7()
+const cw8 = () =>{
+    const task1 = () =>{
+        let skill = {
+            name: 'Dog',
+            level: 8,
+            showInfo: function(){
+                return `${this.name} - ${this.level}`
+            }
+        }
+        console.log(skill.showInfo())
+    }
+    const task2 = () =>{
+        function Calc(number1,number2){
+            this.number1 = number1;
+            this.number2 = number2;
+            this.getPlus = function(){
+                return this.number1 + this.number2;
+            }
+            this.getMinus = function(){
+                return this.number1 - this.number2;
+            }
+        }
+    }
+}
+const hw8 = () =>{
+    let ladder = {
+        counter: 0,
+        up: function(){
+            this.counter += 1;
+            return this 
+        },
+        down: function(){
+            this.counter += -1;
+            return this 
+        },
+        showStep: function(){
+            console.log(this.counter)
+        }
+    }
+    ladder.up().up().down().showStep()
+}
+const cw9 = () =>{
+    function taskContruct(n = 6){
+        this._number = n;
+        this.checkNumber = function(number = this._number){
+            if(number < 0){
+                return false
+            }
+        }
+        this.sumNumbers = function(number = this._number){
+            if(!this.checkNumber()) {
+                return "Error";
+            }
+            if(number === 1){
+                return 1;
+            }
+            return number + this.sumNumbers(number - 1)
+        }
+        this.factorial = function(number = this._number){
+            if(!this.checkNumber()) {
+                return "Error";
+            }
+            if(number === 1){
+                return 1
+            }else{
+                return number * this.factorial(n -1) 
+            }
+        }
+        this.numberPow = function(number = this._number, m = this._number){
+            if(number === 0){
+                return 0;
+            }else if(m === 0){
+                return 1;
+            }else if(m < 0){
+                return "ERROR"
+            }
+            return number * this.numberPow(number, m -1);
+        }
+        this.fibonacci = function(number = this._number){
+            if(!this.checkNumber()) {
+                return "Error";
+            }
+            if(number <= 1){
+                return number;
+            }else{
+                return this.fibonacci(number-1) + this.fibonacci(number-2);
+            }
+        }
+    }
+    const test1 = new taskContruct(-2);
+    console.log(test1.factorial())
+}
