@@ -403,4 +403,54 @@ const hw8 = () =>{
     }
     ladder.up().up().down().showStep()
 }
-hw8()
+const cw9 = () =>{
+    function taskContruct(n = 6){
+        this._number = n;
+        this.checkNumber = function(number = this._number){
+            if(number < 0){
+                return false
+            }
+        }
+        this.sumNumbers = function(number = this._number){
+            if(!this.checkNumber()) {
+                return "Error";
+            }
+            if(number === 1){
+                return 1;
+            }
+            return number + this.sumNumbers(number - 1)
+        }
+        this.factorial = function(number = this._number){
+            if(!this.checkNumber()) {
+                return "Error";
+            }
+            if(number === 1){
+                return 1
+            }else{
+                return number * this.factorial(n -1) 
+            }
+        }
+        this.numberPow = function(number = this._number, m = this._number){
+            if(number === 0){
+                return 0;
+            }else if(m === 0){
+                return 1;
+            }else if(m < 0){
+                return "ERROR"
+            }
+            return number * this.numberPow(number, m -1);
+        }
+        this.fibonacci = function(number = this._number){
+            if(!this.checkNumber()) {
+                return "Error";
+            }
+            if(number <= 1){
+                return number;
+            }else{
+                return this.fibonacci(number-1) + this.fibonacci(number-2);
+            }
+        }
+    }
+    const test1 = new taskContruct(-2);
+    console.log(test1.factorial())
+}
