@@ -454,3 +454,69 @@ const cw9 = () =>{
     const test1 = new taskContruct(-2);
     console.log(test1.factorial())
 }
+const hw9 = () =>{
+    let company = {
+        sales: [{name: 'John', salary: 1000}, {name: 'Alice', salary: 600}],
+        development: {
+            web: [{name: 'Peter', salary: 2000}, {name:'Alex', salary: 1800}],
+            internals: [{name: 'Jack', salary: 1300}]
+        }
+    }
+    function countTheSalary(anyCompany){
+        this._company = anyCompany;
+        this.getSumOfAllSalary = function(arg = this._company){
+            let counter = 0;
+            function calcSalary(arg){
+                if(arg.length != undefined){
+                    for(const element in arg){
+                        counter += arg[element].salary
+                    }
+                }else{
+                    for(const element in arg){
+                        calcSalary(arg[element])
+                    }
+                }
+            }
+            calcSalary(arg)
+            return counter
+            // let counter = 0;
+            // let arr = [];
+            // let arr1 = [];
+            // let arr2 = [];
+            // for (const element in arg) {
+            //     arr = []
+            //     arr.push(arg[element])
+            // }
+            // console.log(arr)
+            // for(const element in arr){
+            //     for(const e in arr[element]){
+            //         if(arr[element][e].salary){
+            //             counter += arr[element][e].salary;
+            //             continue;
+            //         }else{
+            //             arr1.push(arr[element][e])
+            //         }
+            //     }
+            // }
+            // console.log(arr1)
+            // for(const element in arr1){
+            //     for(const e in arr[element]){
+            //         for(const e2 in arr[element][e]){
+            //             if(arr[element][e][e2].salary){
+            //                 counter += arr[element][e][e2].salary;
+            //                 continue;
+            //             }else{
+            //                 arr2.push(arr[element][e][e2])
+            //             }
+            //         }
+            //     }
+            // }
+            // console.log(arr1)
+            // console.log(arr2)
+            // console.log(counter)      
+    }
+    }
+    let test = new countTheSalary(company)
+    console.log(test.getSumOfAllSalary())
+}
+hw9()
