@@ -454,3 +454,140 @@ const cw9 = () =>{
     const test1 = new taskContruct(-2);
     console.log(test1.factorial())
 }
+const hw9 = () =>{
+    let company = {
+        sales: [{name: 'John', salary: 1000}, {name: 'Alice', salary: 600}],
+        development: {
+            web: [{name: 'Peter', salary: 2000}, {name:'Alex', salary: 1800}],
+            internals: [{name: 'Jack', salary: 1300}]
+        }
+    }
+    function countTheSalary(anyCompany){
+        this._company = anyCompany;
+        this.getSumOfAllSalary = function(arg = this._company){
+            let counter = 0;
+            function calcSalary(arg){
+                if(arg.length != undefined){
+                    for(const element in arg){
+                        counter += arg[element].salary
+                    }
+                }else{
+                    for(const element in arg){
+                        calcSalary(arg[element])
+                    }
+                }
+            }
+            calcSalary(arg)
+            return counter
+            // let counter = 0;
+            // let arr = [];
+            // let arr1 = [];
+            // let arr2 = [];
+            // for (const element in arg) {
+            //     arr = []
+            //     arr.push(arg[element])
+            // }
+            // console.log(arr)
+            // for(const element in arr){
+            //     for(const e in arr[element]){
+            //         if(arr[element][e].salary){
+            //             counter += arr[element][e].salary;
+            //             continue;
+            //         }else{
+            //             arr1.push(arr[element][e])
+            //         }
+            //     }
+            // }
+            // console.log(arr1)
+            // for(const element in arr1){
+            //     for(const e in arr[element]){
+            //         for(const e2 in arr[element][e]){
+            //             if(arr[element][e][e2].salary){
+            //                 counter += arr[element][e][e2].salary;
+            //                 continue;
+            //             }else{
+            //                 arr2.push(arr[element][e][e2])
+            //             }
+            //         }
+            //     }
+            // }
+            // console.log(arr1)
+            // console.log(arr2)
+            // console.log(counter)      
+    }
+    }
+    let test = new countTheSalary(company)
+    console.log(test.getSumOfAllSalary())
+}
+const cw10 = () =>{
+    const task1 = () =>{
+        const user = {
+            name: "John",
+            age: 30,
+            email: "john@example.com",
+            isAdmin: true,
+            getInfo: function(){
+                return `name: ${this.name}, age: ${this.age},email: ${this.email},admin: ${this.isAdmin}`
+            }
+        }
+        console.log(user.getInfo())
+    }
+    const task2 = () =>{
+        function sumInput(){
+            let arr = []
+            while(true){
+                const number = prompt("Write a number: ")
+                if(number === null){
+                    break;
+                }else if(!isNaN(number) && number != ""){
+                    arr.push(+number)
+                }else{
+                    break;
+                }
+            }
+            let result = arr.reduce(function(acc, value){return acc + value},0)
+            return result;
+        }
+        let result = sumInput()
+        console.log("Sum: " + result)
+    }
+}
+const hw10 = () =>{
+    const task1 = () =>{
+        const person = {
+            name: "Vova",
+            age: 19,
+            city: "Warsaw",
+            showInfo: function(){
+                console.log(this.name , this.age , this.city)
+            }
+        }
+        person.showInfo()
+    }
+    const task2 = () =>{
+        const arr = [1,2,34,4,,5,56,6,7]
+        const arrFilter = arr.filter((arr)=> arr%2 == 0)
+        console.log(arrFilter)
+    }
+    const task3 = () =>{
+        const myContacts = {
+            defaultContacts:[
+                {id: 1, name: "Vova", phoneNumber: "+380123456781",email: "test@example.ex" },
+                {id: 2, name: "Nikita", phoneNumber: "+380123456782",email: "test@example.ex" },
+                {id: 3, name: "Vlad", phoneNumber: "+380123456783",email: "test@example.ex" }
+            ],
+            findContact: function(name){
+                console.log(this.defaultContacts.find((element) => element.name === name))
+            },
+            createNewContact: function(name, phone, email){
+                const value = this.defaultContacts.length + 1;
+                this.defaultContacts.push({id: value, name: name, phoneNumber: phone, email: email})
+            }
+        }
+        myContacts.createNewContact("Volodymyr", "+00000","dadawd")
+        console.log(myContacts.defaultContacts)
+        myContacts.findContact("Volodymyr")
+    }
+    task3()
+}
+hw10()
