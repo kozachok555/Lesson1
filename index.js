@@ -519,4 +519,75 @@ const hw9 = () =>{
     let test = new countTheSalary(company)
     console.log(test.getSumOfAllSalary())
 }
-hw9()
+const cw10 = () =>{
+    const task1 = () =>{
+        const user = {
+            name: "John",
+            age: 30,
+            email: "john@example.com",
+            isAdmin: true,
+            getInfo: function(){
+                return `name: ${this.name}, age: ${this.age},email: ${this.email},admin: ${this.isAdmin}`
+            }
+        }
+        console.log(user.getInfo())
+    }
+    const task2 = () =>{
+        function sumInput(){
+            let arr = []
+            while(true){
+                const number = prompt("Write a number: ")
+                if(number === null){
+                    break;
+                }else if(!isNaN(number) && number != ""){
+                    arr.push(+number)
+                }else{
+                    break;
+                }
+            }
+            let result = arr.reduce(function(acc, value){return acc + value},0)
+            return result;
+        }
+        let result = sumInput()
+        console.log("Sum: " + result)
+    }
+}
+const hw10 = () =>{
+    const task1 = () =>{
+        const person = {
+            name: "Vova",
+            age: 19,
+            city: "Warsaw",
+            showInfo: function(){
+                console.log(this.name , this.age , this.city)
+            }
+        }
+        person.showInfo()
+    }
+    const task2 = () =>{
+        const arr = [1,2,34,4,,5,56,6,7]
+        const arrFilter = arr.filter((arr)=> arr%2 == 0)
+        console.log(arrFilter)
+    }
+    const task3 = () =>{
+        const myContacts = {
+            defaultContacts:[
+                {id: 1, name: "Vova", phoneNumber: "+380123456781",email: "test@example.ex" },
+                {id: 2, name: "Nikita", phoneNumber: "+380123456782",email: "test@example.ex" },
+                {id: 3, name: "Vlad", phoneNumber: "+380123456783",email: "test@example.ex" }
+            ],
+            findContact: function(name){
+                console.log(this.defaultContacts.find((element) => element.name === name))
+            },
+            createNewContact: function(name, phone, email){
+                const value = this.defaultContacts.length + 1;
+                this.defaultContacts.push({id: value, name: name, phoneNumber: phone, email: email})
+            }
+        }
+        myContacts.createNewContact("Volodymyr", "+00000","dadawd")
+        console.log(myContacts.defaultContacts)
+        myContacts.findContact("Volodymyr")
+    }
+    task3()
+}
+hw10()
