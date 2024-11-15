@@ -588,6 +588,4 @@ const hw10 = () =>{
         console.log(myContacts.defaultContacts)
         myContacts.findContact("Volodymyr")
     }
-    task3()
 }
-hw10()
