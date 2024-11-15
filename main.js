@@ -34,3 +34,62 @@
 // })
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<END-CW - 11>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//
+
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<HW - 11>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//
+const root = document.body;
+const divMain = document.createElement("div")
+divMain.classList.add("main-box")
+                                //Task - 1//
+// for(let i = 1;i <= 10;i++){
+//     for(let j = 1;j<=10;j++){
+//         const square = document.createElement("div")
+//         square.classList.add("square")
+//         square.textContent = `${j}`
+//         divMain.appendChild(square)
+//         if(j != 1 && i != 1){
+//              square.textContent = `${i * j}`
+//         }else if(j === 1){
+//             square.textContent = `${i}`
+//         }
+//     }
+// }
+
+
+
+
+
+
+                                //Task - 2//
+// divMain.textContent = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit ab sunt molestiae minus neque doloremque dolores modi excepturi labore distinctio aperiam facere possimus aliquid et ipsa, similique sapiente cumque dignissimos."
+// const createBtn = document.createElement("button")
+// divMain.appendChild(createBtn)
+// createBtn.textContent = "Change the color"
+// createBtn.addEventListener("click",function(){
+//     if(divMain.classList.contains("color")){
+//         divMain.classList.remove("color")
+//     }else if(!divMain.classList.contains("color")){
+//         divMain.classList.add("color")
+//     }
+// })
+
+
+
+                                //Task - 3//
+
+const arrayOfMessages = ["1.avif", "2.jpg", "3.avif", "4.avif", "5.jpeg", "6.jpeg", "7.webp", "8.jpeg"]
+const randomBtn = document.createElement("button")
+root.appendChild(randomBtn)
+randomBtn.textContent = "Random the image"
+let img = null;
+randomBtn.addEventListener("click",() =>{
+    if(img){
+        img.remove()
+    }
+    const number = Math.floor(Math.random() * arrayOfMessages.length+1)
+    img = document.createElement("img")
+    root.appendChild(img)
+    img.src = `./assets/${arrayOfMessages[number]}`
+})
+root.appendChild(divMain)
+
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<END-HW - 11>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//
