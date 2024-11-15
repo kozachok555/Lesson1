@@ -566,7 +566,7 @@ const hw10 = () =>{
     }
     const task2 = () =>{
         const arr = [1,2,34,4,,5,56,6,7]
-        const arrFilter = arr.filter((arr)=> arr%2 == 0)
+        const arrFilter = arr.filter((arr)=> arr%2 === 0)
         console.log(arrFilter)
     }
     const task3 = () =>{
