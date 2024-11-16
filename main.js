@@ -60,36 +60,32 @@ divMain.classList.add("main-box")
 
 
                                 //Task - 2//
-// divMain.textContent = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit ab sunt molestiae minus neque doloremque dolores modi excepturi labore distinctio aperiam facere possimus aliquid et ipsa, similique sapiente cumque dignissimos."
-// const createBtn = document.createElement("button")
-// divMain.appendChild(createBtn)
-// createBtn.textContent = "Change the color"
-// createBtn.addEventListener("click",function(){
-//     if(divMain.classList.contains("color")){
-//         divMain.classList.remove("color")
-//     }else if(!divMain.classList.contains("color")){
-//         divMain.classList.add("color")
-//     }
-// })
+divMain.textContent = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit ab sunt molestiae minus neque doloremque dolores modi excepturi labore distinctio aperiam facere possimus aliquid et ipsa, similique sapiente cumque dignissimos."
+const createBtn = document.createElement("button")
+root.appendChild(divMain)
+divMain.appendChild(createBtn)
+createBtn.textContent = "Change the color"
+createBtn.addEventListener("click",function(){
+    divMain.classList.toggle("color")
+})
 
 
 
                                 //Task - 3//
 
-const arrayOfMessages = ["1.avif", "2.jpg", "3.avif", "4.avif", "5.jpeg", "6.jpeg", "7.webp", "8.jpeg"]
-const randomBtn = document.createElement("button")
-root.appendChild(randomBtn)
-randomBtn.textContent = "Random the image"
-let img = null;
-randomBtn.addEventListener("click",() =>{
-    if(img){
-        img.remove()
-    }
-    const number = Math.floor(Math.random() * arrayOfMessages.length+1)
-    img = document.createElement("img")
-    root.appendChild(img)
-    img.src = `./assets/${arrayOfMessages[number]}`
-})
-root.appendChild(divMain)
+// const arrayOfMessages = ["1.avif", "2.jpg", "3.avif", "4.avif", "5.jpeg", "6.jpeg", "7.webp", "8.jpeg"]
+// const randomBtn = document.createElement("button")
+// root.appendChild(randomBtn)
+// randomBtn.textContent = "Random the image"
+// let img = null;
+// randomBtn.addEventListener("click",() =>{
+//     if(img){
+//         img.remove()
+//     }
+//     const number = Math.floor(Math.random() * arrayOfMessages.length+1)
+//     img = document.createElement("img")
+//     root.appendChild(img)
+//     img.src = `./assets/${arrayOfMessages[number]}`
+// })
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<END-HW - 11>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//
