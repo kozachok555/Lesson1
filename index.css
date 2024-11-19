@@ -1,5 +1,5 @@
-.main-box{
-    background-color: aqua;
+.div-main{
+    border: 1px solid black;
     width: 650px;
     height: 650px;
     margin: 0 auto;
@@ -7,6 +7,26 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: space-around;
+}
+.box-parent{
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+}
+.to-do-list-box_elem{
+    border: 1px solid black;
+    width: 500px;
+    height: 500px;
+}
+.to-do-list-box_btn{
+    border: 1px solid black;
+    width: 400px;
+    height: 100px;
 }
 .square{
     width: 60px;
