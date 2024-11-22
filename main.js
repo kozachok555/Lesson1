@@ -133,28 +133,57 @@ divMain.classList.add("div-main")
 // divMain.appendChild(boxParent)
 
                                 //Task - 3//
-const divToDoListElements = document.createElement("div")
-const divToDoListButtons = document.createElement("div")
-divToDoListElements.classList.add("to-do-list-box_elem")
-divToDoListButtons.classList.add("to-do-list-box_btn")
-const input = document.createElement("input")
-const addElem = document.createElement("button")
-addElem.textContent = "Add Note"
-addElem.addEventListener("click",function(){
-    const newNote = document.createElement("p")
-    newNote.textContent = `${input.value}`
-    const btn = document.createElement("button")
-    btn.textContent = `Delete`
-    btn.addEventListener("click",function(event){
-        event.target.parentElement.remove()
-    })
-    newNote.appendChild(btn)
-    divToDoListElements.appendChild(newNote)
-})
+// const divToDoListElements = document.createElement("div")
+// const divToDoListButtons = document.createElement("div")
+// divToDoListElements.classList.add("to-do-list-box_elem")
+// divToDoListButtons.classList.add("to-do-list-box_btn")
+// const input = document.createElement("input")
+// const addElem = document.createElement("button")
+// addElem.textContent = "Add Note"
+// addElem.addEventListener("click",function(){
+//     const newNote = document.createElement("p")
+//     newNote.textContent = `${input.value}`
+//     const btn = document.createElement("button")
+//     btn.textContent = `Delete`
+//     btn.addEventListener("click",function(event){
+//         event.target.parentElement.remove()
+//     })
+//     newNote.appendChild(btn)
+//     divToDoListElements.appendChild(newNote)
+// })
 
-divMain.appendChild(divToDoListElements)
-divMain.appendChild(divToDoListButtons)
-divToDoListButtons.appendChild(input)
-divToDoListButtons.appendChild(addElem)
+// divMain.appendChild(divToDoListElements)
+// divMain.appendChild(divToDoListButtons)
+// divToDoListButtons.appendChild(input)
+// divToDoListButtons.appendChild(addElem)
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<END-HW - 12>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//
+
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<CW - 13>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//
+
+                //Task - 1//
+// const form = document.getElementById("form-login")
+// form.addEventListener("submit",e =>{
+//     e.preventDefault()
+//     const formData = new FormData(e.target)
+//     const values = Object.fromEntries(formData)
+//     console.log(values)
+// })
+
+
+                //Task - 2//
+// const input = document.getElementById("size-btn")
+// const image = document.getElementById("img")
+// image.width = 300;
+// input.addEventListener("input",e =>{
+//     e.preventDefault()
+//     image.width = 300 * e.target.value;
+// })  
+
+
+                //Task - 3//
+
+
+
+
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<END-CW - 13>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//
 root.appendChild(divMain)
