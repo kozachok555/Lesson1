@@ -182,8 +182,77 @@ divMain.classList.add("div-main")
 
                 //Task - 3//
 
+// const pattern = /\b\d+\.\d+\b/g;
+// const str = '0 1 12.345 789.0';
+// let res = str.match(pattern)
+// console.log(res)
+                //Task - 3//
+// const str = '<h1>Привіт!</h1>'
+// const pattern = '/<\/?[a-zA-Z][a-zA-Z0-9]*>/'
+// let res = str.match(str)
+// console.log(res)
+                //Task - 4//
+// const taskMainDiv4 = document.createElement("div")
+// taskMainDiv4.classList.add("input-pass-check") 
+
+// const input = document.createElement("input")
+// input.setAttribute("type","password")
+// input.classList.add("input-pass")
+
+// const dangerList = document.createElement("ul")
+// dangerList.classList.add("pass-ul")  
+
+// const bigLetter = document.createElement("li")
+// bigLetter.classList.add("one-big-letter")
+// bigLetter.textContent = "Одна велика буква"
+
+// const oneNum = document.createElement("li")
+// oneNum.classList.add("one-number")
+// oneNum.textContent = "Одна цифра"
+
+// const oneFig = document.createElement("li")
+// oneFig.classList.add("one-figure")
+// oneFig.textContent = "Один знак пунктуація"
+
+// const minEightSymb = document.createElement("li")
+// minEightSymb.classList.add("min-eight-sym")
+// minEightSymb.textContent = "Мінімум 8 символів"
+
+
+// input.addEventListener("input",(e)=>{
+//     const userPassword = e.target.value;
+//     if(/[A-Z]/.test(userPassword)){
+//         bigLetter.style.color = "green";
+//     }else{
+//         bigLetter.style.color = "red";
+//     }
+//     if(/[0-9]/.test(userPassword)){
+//         oneNum.style.color = "green";
+//     }else{
+//         oneNum.style.color = "red";
+//     }
+//     if(/[.,:;!?(){}\[\]<>@#$%^&*_\-+=~`|\\]/.test(userPassword)){
+//         oneFig.style.color = "green";
+//     }else{
+//         oneFig.style.color = "red";
+//     }
+//     if(userPassword.length > 8){
+//         minEightSymb.textContent = "8 символів"
+//         minEightSymb.style.color = "green"
+//     }else{
+//         minEightSymb.textContent = "Мінімум 8 символів"
+//         minEightSymb.style.color = "red"
+//     }
+// })
 
 
 
+// dangerList.appendChild(bigLetter)
+// dangerList.appendChild(oneNum)
+// dangerList.appendChild(oneFig)
+// dangerList.appendChild(minEightSymb)
+// taskMainDiv4.appendChild(input)
+// taskMainDiv4.appendChild(dangerList)
+// divMain.appendChild(taskMainDiv4)
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<END-CW - 13>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//
 root.appendChild(divMain)

@@ -39,3 +39,14 @@
 .color{
     color: red;
 }
+.input-pass-check{
+    display: flex;
+    flex-direction: column;
+}
+.input-pass{
+    border: 3px solid black;
+}
+.pass-ul{
+    width: 170px;
+    color: red;
+}
