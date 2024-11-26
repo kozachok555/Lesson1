@@ -255,4 +255,136 @@ divMain.classList.add("div-main")
 // taskMainDiv4.appendChild(dangerList)
 // divMain.appendChild(taskMainDiv4)
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<END-CW - 13>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//
-root.appendChild(divMain)
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<HW - 13>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//
+const formBox = document.querySelector(".form-box")
+
+const form = document.createElement("form")
+form.classList.add("form-send")
+form.setAttribute("action","#")
+
+const userName = document.createElement("input")
+userName.classList.add("name-input")
+userName.setAttribute("type","text")
+userName.setAttribute("placeholder","Name")
+userName.setAttribute("id","userName")
+userName.setAttribute("name","userName")
+
+const checkName = document.createElement("p")
+checkName.classList.add("correct-name")
+checkName.textContent = "Треба вести своє імʼя"
+
+const message = document.createElement("textarea")
+message.classList.add("textarea-input")
+message.setAttribute("placeholder","Message")
+message.setAttribute("id","message")
+message.setAttribute("name","message")
+
+const checkMessage = document.createElement("p")
+checkMessage.classList.add("correct-message")
+checkMessage.textContent = "Мінімум 5 символів"
+
+const textAnswer = document.createElement("p")
+textAnswer.classList.add("text-answer")
+textAnswer.textContent = "HOW TO ANSWER YOU?"
+
+const phone = document.createElement("input")
+phone.classList.add("phnum-input")
+phone.setAttribute("type","text")
+phone.setAttribute("placeholder","Phone number")
+phone.setAttribute("id","phone")
+phone.setAttribute("name","phone")
+
+const phoneCheck = document.createElement("p")
+phoneCheck.classList.add("correct-phnumber")
+phoneCheck.textContent = "З початком +380"
+
+const email = document.createElement("input")
+email.classList.add("email-input")
+email.setAttribute("type","email")
+email.setAttribute("placeholder","Email")
+email.setAttribute("id","email")
+email.setAttribute("name","email")
+
+const emailCheck = document.createElement("p")
+emailCheck.classList.add("correct-email")
+emailCheck.textContent = `Містить "@", "."`
+
+const submitButton = document.createElement("button")
+submitButton.classList.add("smb-btn")
+submitButton.setAttribute("type","submit")
+
+const btnText = document.createElement("p")
+btnText.classList.add("smb-btn__text")
+btnText.textContent = "Send message"
+
+
+userName.addEventListener("focus",()=>{
+    checkName.style.color = "red";
+})
+message.addEventListener("focus",()=>{
+    checkMessage.style.color = "red";
+})
+phone.addEventListener("focus",()=>{
+    phoneCheck.style.color = "red";
+})
+email.addEventListener("focus",()=>{
+    emailCheck.style.color = "red";
+})
+userName.addEventListener("input",(e)=>{
+    if(!/\d/.test(e.target.value)){
+        checkName.style.color = "green";
+    }else{
+        checkName.style.color = "red";
+    }
+})
+message.addEventListener("input",(e)=>{
+    if(e.target.value.length > 4){
+        checkMessage.style.color = "green";
+    }else{
+        checkMessage.style.color = "red";
+    }
+})
+phone.addEventListener("input",(e)=>{
+    if(/^\+380\d{9}$/.test(e.target.value)){
+        phoneCheck.style.color = "green"
+    }else{
+        phoneCheck.style.color = "red"
+    }
+})
+email.addEventListener("input",(e)=>{
+    if(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.target.value)){
+        emailCheck.style.color = "green"
+    }else{
+        emailCheck.style.color = "red"
+    }
+})
+form.addEventListener("submit",(e)=>{
+    if(emailCheck.style.color ==="green" && phoneCheck.style.color === "green" && checkName.style.color === "green" && checkMessage.style.color === "green"){
+        const formData = new FormData(e.target)
+        const values = Object.fromEntries(formData.entries())
+        console.log(values)
+    }else{
+        alert("Проверь все поля")
+    }
+    e.preventDefault()
+})
+
+
+
+
+
+
+form.appendChild(userName)
+form.appendChild(checkName)
+form.appendChild(message)
+form.appendChild(checkMessage)
+form.appendChild(textAnswer)
+form.appendChild(phone)
+form.appendChild(phoneCheck)
+form.appendChild(email)
+form.appendChild(emailCheck)
+form.appendChild(submitButton)
+submitButton.appendChild(btnText)
+formBox.appendChild(form)
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<END-HW - 13>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//
+// root.appendChild(form)
