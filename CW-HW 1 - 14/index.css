@@ -159,12 +159,6 @@ input[type=text] {
     padding-left: 10px;
     font-size: 15px;
 }
-.task-text-p{
-
-}
-.task-text-h{
-    
-}
 .task-div{
     position: fixed;
     border: 1px solid red;
@@ -216,7 +210,4 @@ input[type=text] {
     display: flex;
     justify-content: center;
     left: 425px;
-}
-.text-number{
-
 }
