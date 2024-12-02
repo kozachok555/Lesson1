@@ -159,3 +159,64 @@ input[type=text] {
     padding-left: 10px;
     font-size: 15px;
 }
+.task-text-p{
+
+}
+.task-text-h{
+    
+}
+.task-div{
+    position: fixed;
+    border: 1px solid red;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    z-index: 4;
+    background-color: white;
+}
+.task-btn{
+    border: none;
+    position: relative;
+    left: 80%;
+    bottom: 80%;
+    width: 20px;
+}
+.display{
+    display: none;
+}
+.modal-box{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(92, 90, 90, 0.446);
+}
+.open-modal:hover{
+    border: none;
+}
+/*/--------------------------------------------------------------------/*/
+.task2l14{
+    margin: 0 auto;
+    width: 700px;
+    height: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.slides-box{
+    width: 600px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    left: 425px;
+}
+.text-number{
+
+}
