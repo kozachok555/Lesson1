@@ -51,7 +51,6 @@ createBtnLeft.textContent = "Left"
 createSlide("Hello , this is my task")
 createSlide("Aaaaaa help me")
 createSlide("very interesting")
-
 slides[0].style.display = "flex"
 slidesBtn[0].style.background = "green"
 
