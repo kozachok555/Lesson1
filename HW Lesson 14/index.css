@@ -1,0 +1,29 @@
+.main{
+    margin: 0 auto;
+    width: 710px;
+    height: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.slides-box{
+    width: 600px;
+    height: 450px;
+    background-color: rgba(147, 147, 147, 0.73);
+    left: 420px;
+}
+.btn-box{
+    position: absolute;
+    top: 540px;
+    left: 420px;
+    width: 600px;
+    display: flex;
+    justify-content: space-around;
+}
+.tog-btn{
+    width: 20px;
+    height: 20px;
+    border: 0;
+    border-radius: 50%;
+    background-color: red;
+}
