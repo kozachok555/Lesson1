@@ -183,9 +183,11 @@ function showStorage(){
             userNameEdit.value = element.userName
             userPhoneEdit.value = element.userPhone
             userAgeEdit.value = element.userAge
+            createFormSendEdit.dataset.index = index;
         })
         createFormSendEdit.addEventListener("submit",function(e){
             e.preventDefault()
+            const index = createFormSendEdit.dataset.index;
             getUsers[index] = {
                 userName: userNameEdit.value,
                 userPhone: userPhoneEdit.value,
@@ -194,7 +196,7 @@ function showStorage(){
             localStorage.setItem("users",JSON.stringify(getUsers))
             createModalWindowBackgroundEdit.classList.add("display-none")
                 
-            showStorage();
+            showStorage()
         })
 
         createAction.appendChild(createViewButton)
