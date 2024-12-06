@@ -1,20 +1,24 @@
 const sendForm = document.querySelector(".form")
 const toDoList = document.querySelector(".js--todos-wrapper")
 const findForm = document.querySelector(".form__input")
+const LOCAL_STORAGE_USERS_VALUE = "users-value"
+
 sendForm.addEventListener("submit",function(e){
     e.preventDefault()
     const formData = new FormData(e.target)
     const values = Object.fromEntries(formData.entries())
-    const getUsersValue = JSON.parse(localStorage.getItem("users-value")) || []
-    const newUsersValue = [...getUsersValue,values]
-    localStorage.setItem("users-value",JSON.stringify(newUsersValue))
+    const listOfValues = getFromLocalStorage() || []
+    const newListOfValues = [...listOfValues,values]
+    saveToLocalStorage(newListOfValues)
 
     showList()
 })
+
 function showList(){
-    const getValues = JSON.parse(localStorage.getItem("users-value"))
+    const listOfValues = getFromLocalStorage()
     toDoList.innerHTML =``
-    getValues.forEach((element,index) => {
+
+    listOfValues.forEach((element,index) => {
         const createToDoItem = document.createElement("li")
         createToDoItem.classList.add("todo-item")
         createToDoItem.dataset.index = index
@@ -36,20 +40,21 @@ function showList(){
         }
 
         findForm.value = ""
+
         createToDoItem.appendChild(createCheck)
         createToDoItem.appendChild(createText)
         createToDoItem.appendChild(createButtonDelete)
         toDoList.appendChild(createToDoItem)
 
         createButtonDelete.addEventListener("click",function(){
-            getValues.splice(index,1)
-            localStorage.setItem("users-value",JSON.stringify(getValues))
+            listOfValues.splice(index,1)
+            saveToLocalStorage(listOfValues)
             showList()
         })
 
         createCheck.addEventListener("change",function(){
-            getValues[index].checked = this.checked
-            localStorage.setItem("users-value", JSON.stringify(getValues))
+            listOfValues[index].checked = this.checked
+            saveToLocalStorage(listOfValues)
             if(this.checked){
                 createToDoItem.classList.add("todo-item--checked")
             }else{
@@ -58,4 +63,11 @@ function showList(){
         })
     })
 }
+function saveToLocalStorage(arg){
+    localStorage.setItem(LOCAL_STORAGE_USERS_VALUE, JSON.stringify(arg))
+}
+function getFromLocalStorage(){
+    return JSON.parse(localStorage.getItem(LOCAL_STORAGE_USERS_VALUE))
+}
+
 showList()
