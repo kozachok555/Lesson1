@@ -1,4 +1,4 @@
-class FormValidator{
+class FormValidatorCW{
     constructor(form){
         this.form = form;
         this.init(this.form)
@@ -65,9 +65,8 @@ class FormValidator{
     validateFieldMin(arg){
        return arg.length >4;
     }
-    
 }
 document.addEventListener("DOMContentLoaded",function(){
     const form = document.querySelector(".form")
-    new FormValidator(form);
+    new FormValidatorCW(form);
 })
