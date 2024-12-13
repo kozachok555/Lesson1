@@ -3,7 +3,7 @@ const clock = document.querySelector(".clock")
 let minutes = 0;
 let secunds = 0;
 
-function getTime(min,sec){
+function setTime(min,sec){
     minutes = min;
     secunds = sec;
     if(min < 10 && sec < 10){
@@ -23,7 +23,7 @@ const intervalId = setInterval(function(){
     }else{
         secunds--
     }
-    getTime(minutes,secunds)
+    setTime(minutes,secunds)
     if(minutes === 0 && secunds === 0){
         clearInterval(intervalId)
     }
@@ -31,4 +31,4 @@ const intervalId = setInterval(function(){
 
 
 
-getTime(0,12)
+setTime(0,12)
