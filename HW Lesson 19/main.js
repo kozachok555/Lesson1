@@ -13,11 +13,11 @@ const pressure = document.querySelector(".pressure")
 const API_KEY = "036a41a95c948f327b370fb6606eaed3";
 const LAT = 52.2297;
 const LON = 21.0122;
-const FETCH_RESPONSE = `https://api.openweathermap.org/data/2.5/weather?lat=${LAT}&lon=${LON}&units=metric&lang=ua&appid=${API_KEY}`;
+const FETCH_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${LAT}&lon=${LON}&units=metric&lang=ua&appid=${API_KEY}`;
 
 async function fetchWeather() {
     try{
-        const response = await fetch(FETCH_RESPONSE)
+        const response = await fetch(FETCH_URL)
         if(response.ok){
             const data = await response.json()
             console.log(data)
